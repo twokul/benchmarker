@@ -1,0 +1,19 @@
+{
+  "name": "benchmarker",
+  "version": "0.0.1",
+  "description": "DSL for writing benchmarks",
+  "main": "benchmarker.js",
+  "bin": "./bin/cli.js",
+  "scripts": {
+    "test": "node_modules/.bin/nodeunit tests"
+  },
+  "author": "Alex Navasardyan <alex.navasardyan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "esprima": "~1.0.4",
+    "optimist": "~0.6.0"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.2"
+  }
+}
