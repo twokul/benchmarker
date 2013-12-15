@@ -14,6 +14,10 @@ var a;
 function sq(a) {
   return a*a;
 }
+
+function cb(a) {
+  return a*a*a;
+}
  
 setup(function() {
   a = 1;
@@ -21,6 +25,10 @@ setup(function() {
  
 benchmark('testing square function', function() {
   sq(a);
+}, 1000);
+
+benchmark('testing cube function', function() {
+  cb(a);
 }, 1000);
  
 teardown(function() {
@@ -38,6 +46,10 @@ var suite = new Benchmark.Suite('My Benchmark');
 function sq(a) {
   return a*a;
 }
+
+function cb(a) {
+  return a*a*a;
+}
  
 suite.on('setup', function() {
   a = 1;
@@ -45,6 +57,10 @@ suite.on('setup', function() {
  
 suite.add('testing square function', function() {
   sq(a);
+});
+
+suite.add('testing cube function', function() {
+  cb(a);
 });
  
 suite.on('teardown', function() {
@@ -60,11 +76,23 @@ var a, i;
 function sq(a) {
   return a*a;
 }
+
+function cb(a) {
+  return a*a*a;
+}
  
 a = 1;
 i = 0;
  
 console.profile('testing square function');
+while (i++ < 1000) {
+  sq(a);
+}
+console.profileEnd();
+
+i = 0;
+ 
+console.profile('testing cube function');
 while (i++ < 1000) {
   sq(a);
 }
