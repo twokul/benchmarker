@@ -10,4 +10,4 @@ console.profile('My Benchmark - testing square function');
 while (i++ < 1000) {
   sq(a);
 }
-console.profile('My Benchmark - testing square function');
+console.profileEnd('My Benchmark - testing square function');

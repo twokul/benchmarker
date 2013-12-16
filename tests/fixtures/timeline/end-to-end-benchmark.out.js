@@ -1,11 +1,13 @@
 var a = 1;
 
-var i = 0;
-
 function sq(a) {
   return a*a;
 }
 
+var i = 0;
+
 console.timeline('My Benchmark - testing square function');
-sq(a);
+while (i++ < 1000) {
+  sq(a);
+}
 console.timelineEnd('My Benchmark - testing square function');

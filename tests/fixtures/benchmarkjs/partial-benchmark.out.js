@@ -1,15 +1,11 @@
 var suite = new Benchmark.Suite('My Benchmark');
 
-var a;
+var a = 1;
 
-suite.on('setup', function() {
-  a = 1;
-});
+function sq(a) {
+  return a*a;
+}
 
 suite.add('testing square function', function() {
   sq(a);
-});
-
-suite.on('teardown', function() {
-  a = undefined;
 });
