@@ -1,6 +1,18 @@
 benchmarker
 ===========
 
+### Getting started
+
+```bash
+npm install
+```
+
+### To run tests
+
+```bash
+npm test
+```
+
 DSL for writing benchmarks
 
 Benchmark:

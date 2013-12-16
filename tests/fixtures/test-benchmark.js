@@ -10,9 +10,9 @@ setup(function() {
   a = 1;
 });
 
-benchmark(function() {
+benchmark('testing square function', function() {
   sq(a);
-});
+}, 1000);
 
 teardown(function() {
   a = undefined;
