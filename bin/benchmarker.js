@@ -2,7 +2,9 @@
 
 var argv = require('optimist')
             .boolean('v')
+            .string('t')
             .alias('v','version')
+            .alias('t','type')
             .argv;
 
 var fs = require('fs');
@@ -11,21 +13,20 @@ if (argv.version) {
   var version = require('../package').version;
   process.stdout.write(version + '\n');
 } else {
-  var filename = argv._[0];
+  var filename = argv._[0],
+      options  = {};
   if (!filename){
     process.stdout.write('You must supply the input file path.\n');
     process.exit(1);
   }
 
   var source = fs.readFileSync(filename).toString();
-  // var whitelist;
-  // if (argv.w) {
-    // whitelist = JSON.parse(fs.readFileSync(argv.w).toString());
-  // } else {
-    // whitelist = {};
-  // }
+
+  options.type = argv.t || argv.type || 'benchmarkjs';
 
   var benchmarker = require(__dirname + "/../benchmarker.js");
-  console.log(benchmarker(source));
+  process.stdout.write('Converting ' + filename + '...\n');
+
+  console.log(benchmarker(source, options));
   // process.stdout.write(benchmarker(source));
 }
