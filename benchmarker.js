@@ -8,6 +8,9 @@ var
     TEARDOWN             = 'teardown',
     EXPRESSION_STATEMENT = 'ExpressionStatement',
     CALL_EXPRESSION      = 'CallExpression',
+    esprimaOptions       = {
+      comment: true
+    },
     codegenOptions       = {
       format: {
         indent: {
@@ -27,7 +30,7 @@ var benchmarker = function(source, options) {
     options = _.extend(options, codegenOptions);
 
     // ask esprima for AST
-    tree = esprima.parse(source, options);
+    tree = esprima.parse(source, esprimaOptions);
 
     // mutate the tree and return the output as string
     result = mutator(tree).compile(options);
