@@ -2,12 +2,6 @@ var
     esprima              = require('esprima'),
     mutator              = require('./lib/mutator'),
     _                    = require('lodash'),
-    SUITE                = 'suite',
-    SETUP                = 'setup',
-    BENCHMARK            = 'benchmark',
-    TEARDOWN             = 'teardown',
-    EXPRESSION_STATEMENT = 'ExpressionStatement',
-    CALL_EXPRESSION      = 'CallExpression',
     esprimaOptions       = {
       comment: true
     },

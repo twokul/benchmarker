@@ -85,7 +85,7 @@ exports['should `benchmark` node to console api `benchmark` node'] = function(te
 exports['should `teardown` node to console api `teardown` node'] = function(test) {
   var node         = esprima.parse('teardown(function() { a = null; });'),
       expectedNode = esprima.parse('a = null;'),
-      actual       = JSON.stringify(parser['consoleapi:teardown'].call(this, node.body[0]).body[0]),
+      actual       = JSON.stringify(parser['consoleapi:teardown'].call(this, node.body[0])),
       expected     = JSON.stringify(expectedNode.body[0]);
 
   test.expect(1);
