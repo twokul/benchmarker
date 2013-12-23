@@ -1,13 +1,1 @@
-var a = 1;
-
-function sq(a) {
-  return a*a;
-}
-
-var i = 0;
-
-console.profile('My Benchmark - testing square function');
-while (i++ < 1000) {
-  sq(a);
-}
-console.profileEnd('My Benchmark - testing square function');
+var a;function sq(a){return a*a;}a=1;var benchmarkCounter=0;console.profile('testing square function');while(benchmarkCounter++<1000){sq(a);}console.profileEnd('testing square function');benchmarkCounter=0;a=undefined;
