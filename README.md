@@ -89,7 +89,7 @@ console.profile('testing square function');
 while (benchmarkCounter++ < 1000) {
   sq(a);
 }
-console.profileEnd();
+console.profileEnd('testing square function');
 
 benchmarkCounter = 0;
 
