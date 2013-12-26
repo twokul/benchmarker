@@ -27,5 +27,5 @@ if (argv.version) {
   var benchmarker = require(__dirname + "/../benchmarker.js");
   process.stdout.write('Converting ' + filename + '...\n');
 
-  process.stdout.write(benchmarker(source));
+  process.stdout.write(benchmarker(source, options));
 }
